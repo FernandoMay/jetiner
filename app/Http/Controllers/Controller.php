@@ -11,3 +11,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
+
+class PhotoController extends Controller{
+    $products = Product::published()
+        ->where('',)
+        ->where('',)
+        ->get();
+    return view('guest.photos.index')->with(compact('products'));
+}
